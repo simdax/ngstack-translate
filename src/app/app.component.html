@@ -1,0 +1,46 @@
+<h1>@ngstack/translate</h1>
+
+<button (click)="changeLang('en')">EN</button>
+<button (click)="changeLang('fr')">FR</button>
+
+<h2>
+  <code ngNonBindable>
+    &lt;div&gt;{{ 'KEY' | translate }}&lt;/div&gt;
+  </code>
+</h2>
+<p>{{ 'TITLE' |  translate }}</p>
+
+<h2>
+  <code ngNonBindable>
+    &lt;input [attribute]="property | translate"&gt;&lt;/input&gt;
+  </code>
+</h2>
+<input [value]="'TITLE' | translate">
+
+<h2>
+  <code ngNonBindable>
+    &lt;input attribute="{{ property | translate }}"&gt;&lt;/input&gt;
+  </code>
+</h2>
+<input value="{{ 'TITLE' | translate }}">
+
+<h2>
+  <code ngNonBindable>
+    &lt;div [innerHTML]="'KEY' | translate"&gt;&lt;/div&gt;
+  </code>
+</h2>
+<div [innerHTML]="'HTML' | translate"></div>
+
+<h2>
+  <code ngNonBindable>
+    &lt;div&gt;{{ 'SOME.PROPERTY.PATH' | translate }}&lt;/div&gt;
+  </code>
+</h2>
+<div>{{ 'SOME.PROPERTY.PATH' | translate }}</div>
+
+<h2>
+  <code ngNonBindable>
+    &lt;div&gt;{{ 'FORMATTED.HELLO_MESSAGE' | translate:{ username: 'admin' } }}&lt;/div&gt;
+  </code>
+</h2>
+<div>{{ 'FORMATTED.HELLO_MESSAGE' | translate:{ username: 'admin' } }}</div>
